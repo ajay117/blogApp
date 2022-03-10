@@ -7,7 +7,9 @@
   <img src="<%= blog.image %>" />
   <p><%= blog.title %></p>
   <p><%= blog.description %></p>
-  <p><a href="/blogs/new">Edit</a></p>
+  <p>
+    <a href="/blogs/new">Edit</a><a href="/blogs/<%= blog.id %>">See More</a>
+  </p>
 </div>
 
 <% } %> <%- include("../partials/footer") %>
