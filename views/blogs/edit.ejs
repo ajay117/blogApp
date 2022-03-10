@@ -1,0 +1,23 @@
+<%- include("../partials/head") %>
+<h1>Edit BLog</h1>
+
+<form method="POST" action="#">
+  <label for="title">Title</label><br />
+  <input type="text" id="title" name="title" value="<%= blog.title %>" /><br />
+  <label for="image">Image</label>
+  <input type="text" id="image" name="image" value="<%= blog.image %>" /><br />
+  <label for="description">Description</label>
+  <textarea
+    id="description"
+    name="description"
+    value="<%= blog.description %>"
+    rows="5"
+    cols="20"
+  >
+<%= blog.description %></textarea
+  >
+  <br />
+  <button>Submit</button>
+</form>
+
+<%-include("../partials/footer") %>

@@ -2,13 +2,15 @@
 
 <h1>All Blogs</h1>
 
+<a href="/">Go to main page.</a>
+
 <% for(let blog of blogData) { %>
 <div class="container">
   <img src="<%= blog.image %>" />
   <p><%= blog.title %></p>
   <p><%= blog.description %></p>
   <p>
-    <a href="/blogs/new">Edit</a><a href="/blogs/<%= blog.id %>">See More</a>
+    <a href="/blogs/<%= blog.id %>">See More</a>
   </p>
 </div>
 

@@ -46,6 +46,12 @@ app.get("/blogs/:id", (req, res) => {
   res.render("blogs/show", { blog });
 });
 
+app.get("/blogs/:id/edit", (req, res) => {
+  const id = req.params.id;
+  const blog = blogData.find((blog) => blog.id === id);
+  res.render("blogs/edit", { blog });
+});
+
 app.listen(PORT, () => {
   console.log("Server Started");
 });
