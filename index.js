@@ -39,4 +39,8 @@ app.get("/blogs", (req, res) => {
   res.render("blogs/index", { blogData });
 });
 
+app.get("/blogs/new", (req, res) => {
+  res.render("blogs/new");
+});
+
 app.listen(PORT, () => "Server Started");

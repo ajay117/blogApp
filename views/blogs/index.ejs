@@ -1,12 +1,13 @@
-<%- include("partials/head") -%>
+<%- include("../partials/head") %>
 
 <h1>All Blogs</h1>
 
 <% for(let blog of blogData) { %>
-<div>
+<div class="container">
   <img src="<%= blog.image %>" />
   <p><%= blog.title %></p>
   <p><%= blog.description %></p>
+  <p><a href="/blogs/new">Edit</a></p>
 </div>
 
-<% } %> <%- include("partials/footer") -%>
+<% } %> <%- include("../partials/footer") %>

@@ -2,3 +2,7 @@ img {
   width: 200px;
   height: 200px;
 }
+
+.container {
+  border: 1px solid black;
+}
