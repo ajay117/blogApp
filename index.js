@@ -1,8 +1,11 @@
 const express = require("express");
 const app = express();
 const path = require("path");
+const methodOverride = require("method-override");
 const { v4: uuid } = require("uuid");
 const PORT = process.env.port || 3000;
+
+app.use(methodOverride("_method"));
 
 app.use(express.static(path.join(__dirname, "/public")));
 app.use(express.urlencoded({ extended: true }));
@@ -50,6 +53,29 @@ app.get("/blogs/:id/edit", (req, res) => {
   const id = req.params.id;
   const blog = blogData.find((blog) => blog.id === id);
   res.render("blogs/edit", { blog });
+});
+
+app.patch("/blogs/:id", (req, res) => {
+  const id = req.params.id;
+  const { title, image, description } = req.body;
+  const blog = blogData.find((blog) => blog.id === id);
+  if (blog.title !== title) {
+    blog.title = title;
+  }
+  if (blog.image !== image) {
+    blog.image = image;
+  }
+  if (blog.description !== description) {
+    blog.description = description;
+  }
+  res.redirect("/blogs/" + id);
+});
+
+app.delete("/blogs/:id", (req, res) => {
+  const id = req.params.id;
+  const filteredBlogData = blogData.filter((blog) => blog.id !== id);
+  blogData = filteredBlogData;
+  res.redirect("/blogs");
 });
 
 app.listen(PORT, () => {

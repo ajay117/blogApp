@@ -2,12 +2,18 @@
 
 <form method="POST" action="/blogs">
   <label for="title">Title</label><br />
-  <input type="text" id="title" name="title" /><br />
+  <input type="text" id="title" name="title" placeholder="Title" /><br />
   <label for="image">Image</label>
-  <input type="text" id="image" name="image" /><br />
+  <input type="text" id="image" name="image" placeholder="Image Url..." /><br />
   <label for="description">Description</label>
-  <textarea type="text" id="description" name="description" /><br />
+  <textarea
+    id="description"
+    name="description"
+    placeholder="Description"
+  ></textarea>
   <button>Submit</button>
 </form>
+
+<a href="/">Go to Main Page</a>
 
 <%- include("../partials/footer") %>

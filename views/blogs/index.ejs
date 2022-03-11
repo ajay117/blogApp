@@ -1,12 +1,14 @@
 <%- include("../partials/head") %>
 
-<h1>All Blogs</h1>
+<h1 class="text-center">All Blogs</h1>
 
-<a href="/">Go to main page.</a>
+<p class="text-center"><a href="/">Go to main page.</a></p>
 
 <% for(let blog of blogData) { %>
 <div class="container">
-  <img src="<%= blog.image %>" />
+  <div class="img-container">
+    <img src="<%= blog.image %>" />
+  </div>
   <p><%= blog.title %></p>
   <p><%= blog.description %></p>
   <p>

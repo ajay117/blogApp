@@ -1,7 +1,7 @@
 <%- include("../partials/head") %>
 <h1>Edit BLog</h1>
 
-<form method="POST" action="#">
+<form method="POST" action="/blogs/<%= blog.id %>?_method=PATCH">
   <label for="title">Title</label><br />
   <input type="text" id="title" name="title" value="<%= blog.title %>" /><br />
   <label for="image">Image</label>
